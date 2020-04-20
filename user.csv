@@ -1,0 +1,15 @@
+id,first_name,last_name,password,position,salary,role
+1,amir,bernstein,12345678,teacher,10,teacher
+2,hen,biton,12345678,admin,10,admin
+3,gabriel,bruck,12345678,teacher,10,teacher
+4,rommi,englard,12345678,teacher,10,teacher
+5,rachel,ouday,12345678,teacher,10,teacher
+6,amira,bernsdtein,12345678,teacher,10,teacher
+7,angelina,jolie,12345678,teacher,10,teacher
+8,brad,pitt,12345678,teacher,10,teacher
+9,jennifer,ansiton,12345678,teacher,10,teacher
+10,steve,mcqueen,12345678,teacher,10,teacher
+11,tom,ford,12345678,teacher,10,teacher
+12,baron,rothchild,12345678,teacher,10,teacher
+13,david,bengurion,12345678,teacher,10,teacher22,Tom,Knecht,password,student,100,teacher
+

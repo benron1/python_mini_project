@@ -1,1 +1,0 @@
-user_id, first, last, password, position, salary, role
