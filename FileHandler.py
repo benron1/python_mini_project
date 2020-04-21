@@ -1,37 +1,3 @@
-# import csv
-#
-#
-# class FileHandler:
-#     def __init__(self):
-#         self.employee = []
-#
-#     def load_from_csv_file(self, *args):
-#         try:
-#             with open(args[0]) as csv_file:
-#                 csv_reader = csv.reader(csv_file, delimiter=',')
-#                 line_count = 0
-#                 for row in csv_reader:
-#                     if line_count == 0:
-#                         line_count += 1
-#                     else:
-#                         employee = {
-#                             "id": row[0],
-#                             "first_name": row[1],
-#                             "last_name": row[2],
-#                             "password": row[3],
-#                             "position": row[4],
-#                             "salary": row[5],
-#                             "role": row[6],
-#                         }
-#                         self.employee.append(employee)
-#
-#         except Exception as error:
-#             print("There is an error: " + str(error))
-#
-#
-# file = FileHandler()
-# file.load_from_csv_file("/Users/Ben/Documents/dev/Python_mini_project/user.csv")
-# print(file.employee)
 
 import csv
 
@@ -60,7 +26,7 @@ class File_handler:
 
             self.load_from_csv(file_name)
             for row in self.list:
-                if row.get("user_id") == data[0]:
+                if row.get("id") == data[0]:
                     raise Exception("This ID already exists")
 
             with open(file_name, 'a+', newline='') as write_obj:
@@ -70,10 +36,33 @@ class File_handler:
         except Exception as error:
             print("There is an error :" + str(error))
 
+    def remove_from_csv(self, file_name, id):
+        try:
 
-# data_input = ['22', 'Tom', 'Knecht', 'password', 'student', 100, 'teacher']
-#
-# file = File_handler()
+            f = open(file_name, 'r+')
+            file_content = list(csv.reader(f))
+            counter = 0
+
+            for row in file_content:
+                if row[0] == id:
+                    file_content.remove(row)
+                    counter += 1
+
+                with open(file_name, 'w') as f:
+                    writer = csv.writer(f)
+                    writer.writerows(file_content)
+
+            if counter == 0:
+                print('No ID found')
+
+        except Exception as error:
+            print("There is an error :" + str(error))
+
+
+data_input = ['22', 'Tom', 'Knecht', 'password', 'student', 100, 'teacher']
+
+file = File_handler()
 # file.append_to_csv("/Users/Ben/Documents/dev/Python_mini_project/user.csv", data_input)
 # file.load_from_csv("/Users/Ben/Documents/dev/Python_mini_project/user.csv")
+file.remove_from_csv("/Users/Ben/Documents/dev/Python_mini_project/user.csv", "8")
 
