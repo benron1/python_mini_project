@@ -17,15 +17,16 @@ class User:
                 if name == row['first_name'] and password == row['password']:
                     access = True
                     user_role = str(row['role'])
+                    break
 
-                if access:
-                    print('Access Granted')
-                    print(f'Your role is {user_role}')
-                    return access
+            if access:
+                print('Access Granted')
+                print(f'Your role is {user_role}')
+                return access
 
-                else:
-                    print('Access Denied')
-                    return access
+            else:
+                print('Access Denied')
+                return access
 
         except Exception as error:
             print("There is an error :" + str(error))
