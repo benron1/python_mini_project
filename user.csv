@@ -10,5 +10,4 @@ id,first_name,last_name,password,position,salary,role
 12,baron,rothchild,12345678,teacher,10,teacher
 13,david,bengurion,12345678,teacher,10,teacher
 17,Tom,Knecht,password,student,100,teacher
-19,Tom,Knecht,password,student,100,teacher
-
+19,Tom,Jones,password,student,100,teacher
